@@ -1,7 +1,23 @@
 import { Phone, Mail, MapPin } from 'lucide-react';
 import LinkedinIcon from '../assets/linkedin.png';
+import { useState } from 'react';
 
 function Contact() {
+  const [copied, setCopied] = useState(false);
+
+  const copyToClipboard = (text) => {
+    /* Use the Clipboard API to write text to the user's clipboard */
+    navigator.clipboard.writeText(text)
+      .then(() => {
+        setCopied(true);
+        /* Reset the copied state after 2 seconds to hide the feedback */
+        setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
+      })
+      .catch((err) => {
+        console.error('Failed to copy text: ', err);
+      });
+  };
+
   return (
     <div>
       <h1 className="text-center text-2xl font-bold">
@@ -16,9 +32,13 @@ function Contact() {
           <Phone />
           <p>+213779951377</p>
         </div>
-        <div className='flex justify-between items-center w-full mb-4'>
+        <div 
+          className='flex justify-between items-center w-full mb-4'
+          onClick={() => copyToClipboard('mouloudjsaraelalia@gmail.com')}
+          >
           <Mail />
           <p>mouloudjsaraelalia@gmail.com</p>
+          {copied && <span className="text-xs text-green-500 ml-2">Copied!</span>}
         </div>
         <div className='flex justify-between items-center w-full mb-4'>
           <MapPin />
