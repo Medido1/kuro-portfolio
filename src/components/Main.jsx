@@ -1,9 +1,9 @@
-import AboutMe from './AboutMe';
+import { Outlet } from 'react-router-dom';
 
 function Main() {
   return (
     <main className="p-4 mt-6">
-      <AboutMe />
+      <Outlet />
     </main>
   )
 }
