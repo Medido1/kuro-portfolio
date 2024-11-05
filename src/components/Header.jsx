@@ -39,14 +39,14 @@ function Header() {
           transition ease-in-out duration-1000`}
           onClick={setSelectedBtn}
         >
-          <a href="">My Work</a>
+          <Link to="my work">My Work</Link>
         </li>
         <li 
           className={`nav-item ${selected === "Contact" ? "selected": ''}
           transition ease-in-out duration-1000`}
           onClick={setSelectedBtn}
         >
-          <a href="">Contact</a>
+          <Link to="contact">Contact</Link>
         </li>
       </ul>
     </header>
