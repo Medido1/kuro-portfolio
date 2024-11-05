@@ -12,7 +12,7 @@ function Cv() {
   }, []);
 
   return (
-    <div className={`bg-gray-200 rounded-md shadow-md p-4 transition ease-in-out duration-1000
+    <div className={`bg-gray-200 rounded-md shadow-md p-4 mt-4 transition ease-in-out duration-1000
       ${isVisible ? "translate-x-1" : "translate-x-[-1000px]"}`}>
       <h1 className="text-2xl font-bold uppercase text-center">
         curriculum vitae

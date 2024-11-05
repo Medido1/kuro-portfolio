@@ -36,7 +36,8 @@ function AboutMe () {
     <div 
       className={`bg-gray-300 p-4 text-center 
       rounded-md shadow-lg leading-6 border-l-4
-      border-blue-500`}
+      border-blue-500  transition ease-in-out duration-1000
+      ${isVisible ? "translate-x-1" : "translate-x-[1000px]"}`}
     >
       <h1 className="text-2xl font-bold mb-2">
         About Me
