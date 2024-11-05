@@ -1,12 +1,19 @@
-import { useEffect } from 'react';
 import {experiences, educations} from '../data';
 import Experience from './Experience';
 import Education from './Education';
+import { useState, useEffect} from 'react';
+import ComputerSkills from './ComputerSkills';
+import Languages from '../components/Languages';
 
 function Cv() {
+  const [isVisible, setIsVisible] = useState(false);
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
   return (
-    <div className="bg-gray-200 rounded-md shadow-md p-4">
+    <div className={`bg-gray-200 rounded-md shadow-md p-4 transition ease-in-out duration-1000
+      ${isVisible ? "translate-x-1" : "translate-x-[-1000px]"}`}>
       <h1 className="text-2xl font-bold uppercase text-center">
         curriculum vitae
       </h1>
@@ -41,6 +48,14 @@ function Cv() {
             </li>
           })}
         </ul>
+        <h2 className="text-lg font-bold uppercase mt-4">
+          Computure skills
+        </h2>
+        <ComputerSkills />
+        <h2 className="text-lg font-bold uppercase mt-4">
+          Languages
+        </h2>
+        <Languages />
       </section>
     </div>
   )
