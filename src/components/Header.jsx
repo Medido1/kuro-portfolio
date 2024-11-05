@@ -11,7 +11,7 @@ function Header() {
 
     setSelected(btnName) /* Update the selected state */
   }
-  
+
   return (
     <header
       className="mt-10 mx-auto w-[90vw] flex justify-center"
@@ -21,25 +21,29 @@ function Header() {
         border-2 border-gray-300 p-2 shadow-sm"
       >
         <li 
-          className={`nav-item ${selected === "Home" ? "selected": ''}`}
+          className={`nav-item ${selected === "Home" ? "selected": ''} 
+          transition ease-in-out duration-500`}
           onClick={setSelectedBtn}
         >
           <Link to="/">Home</Link>
         </li>
         <li 
-          className={`nav-item ${selected === "My CV" ? "selected": ''}`}
+          className={`nav-item ${selected === "My CV" ? "selected": ''}
+          transition ease-in-out duration-500`}
           onClick={setSelectedBtn}
         >
           <Link to="cv">My CV</Link>
         </li>
         <li 
-          className={`nav-item ${selected === "My Work" ? "selected": ''}`}
+          className={`nav-item ${selected === "My Work" ? "selected": ''}
+          transition ease-in-out duration-1000`}
           onClick={setSelectedBtn}
         >
           <a href="">My Work</a>
         </li>
         <li 
-          className={`nav-item ${selected === "Contact" ? "selected": ''}`}
+          className={`nav-item ${selected === "Contact" ? "selected": ''}
+          transition ease-in-out duration-1000`}
           onClick={setSelectedBtn}
         >
           <a href="">Contact</a>
